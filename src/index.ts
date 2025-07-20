@@ -8,9 +8,9 @@ const server = new McpServer({
   version: "1.0.0",
 });
 
-const getWeatherByCity = server.tool(
-  "get-weather-by-city",
-  "Get weather information by city",
+const getCurrentWeatherByCity = server.tool(
+  "get-current-weather-by-city",
+  "Get current weather information by city",
   {
     city: z.string().describe("Name of the city"),
   },
@@ -23,7 +23,7 @@ const getWeatherByCity = server.tool(
       content: [
         {
           type: "text",
-          text: data,
+          text: `${data?.description}, ${data?.temperature}, ${data?.wind}.`,
         },
       ],
     };
