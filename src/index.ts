@@ -30,6 +30,28 @@ const getCurrentWeatherByCity = server.tool(
   }
 );
 
+const getWeatherForecastByCity = server.tool(
+  "get-weather-forecast-by-city",
+  "Get weather forecast information by city",
+  {
+    city: z.string().describe("Name of the city"),
+  },
+  async (params: { city: string }) => {
+    const response = await fetch(
+      `https://goweather.xyz/weather/${params.city}`
+    );
+    const data = await response.json();
+    return {
+      content: [
+        {
+          type: "text",
+          text: data?.forecast,
+        },
+      ],
+    };
+  }
+);
+
 const app = express();
 app.use(express.json());
 
