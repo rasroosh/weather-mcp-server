@@ -21,7 +21,7 @@ const getCurrentWeatherByCity = server.tool(
           type: "text",
           text: `{
 					"cityId": 2,
-					"cityName": "${city}",
+					"cityName": "${param.city}",
 					"currentConditions": "Sun",
 					"temperature": 9,
 					"windSpeed": 17,
@@ -33,7 +33,6 @@ const getCurrentWeatherByCity = server.tool(
   }
 );
 
-/*
 const getWeatherForecastByCity = server.tool(
   "get-weather-forecast-by-city",
   "Get weather forecast information by city",
@@ -41,21 +40,34 @@ const getWeatherForecastByCity = server.tool(
     city: z.string().describe("Name of the city"),
   },
   async (params: { city: string }) => {
-    const response = await fetch(
-      `https://goweather.xyz/weather/${params.city}`
-    );
-    const data = await response.json();
     return {
       content: [
         {
           type: "text",
-          text: data?.forecast,
+          text: `{
+			    "cityName": "${param.city}",
+			    "forecast": [
+			        {
+			            "conditions": "Sun",
+			            "temperature": 12,
+			            "windChillFactor": 11,
+			            "windDirection": "Easterly",
+			            "windSpeed": 8
+			        },
+			        {
+			            "conditions": "Cloud",
+			            "temperature": 19,
+			            "windChillFactor": 16,
+			            "windDirection": "Southerly",
+			            "windSpeed": 13
+			        }
+			    ]
+			}`,
         },
       ],
     };
   }
 );
-*/
 
 const app = express();
 app.use(express.json());
