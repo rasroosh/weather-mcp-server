@@ -19,7 +19,7 @@ const getCurrentWeatherByCity = server.tool(
       content: [
         {
           type: "text",
-          text: `{ "cityName": "${params.city}", "forecast": [{ "day": 1, "conditions": "Sun", "temperature": 12, "windChillFactor": 11, "windDirection": "Easterly", "windSpeed": 8 }, { "day": 2, "conditions": "Cloud", "temperature": 19, "windChillFactor": 16, "windDirection": "Southerly", "windSpeed": 13 }]}`,
+          text: `{ "cityName": "${params.city}", "conditions": "Sun", "temperature": 12, "windChillFactor": 11, "windDirection": "Easterly", "windSpeed": 8 }`,
         },
       ],
     };
@@ -38,7 +38,7 @@ const getWeatherForecastByCity = server.tool(
       content: [
         {
           type: "text",
-          text: `{ "cityName": "${params.city}", "forecast": [{ "conditions": "Sun", "temperature": 12, "windChillFactor": 11, "windDirection": "Easterly", "windSpeed": 8 }, { "conditions": "Cloud", "temperature": 19, "windChillFactor": 16, "windDirection": "Southerly", "windSpeed": 13 }]}`,
+          text: `{ "cityName": "${params.city}", "forecast": [{ "day": 1, "conditions": "Sun", "temperature": 12, "windChillFactor": 11, "windDirection": "Easterly", "windSpeed": 8 }, { "day": 2, "conditions": "Cloud", "temperature": 19, "windChillFactor": 16, "windDirection": "Southerly", "windSpeed": 13 }]}`,
         },
       ],
     };
