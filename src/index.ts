@@ -15,15 +15,19 @@ const getCurrentWeatherByCity = server.tool(
     city: z.string().describe("Name of the city"),
   },
   async (params: { city: string }) => {
-    const response = await fetch(
-      `https://goweather.xyz/weather/${params.city}`
-    );
-    const data = await response.json();
     return {
       content: [
         {
           type: "text",
-          text: `${data?.description}, ${data?.temperature}, ${data?.wind}.`,
+          text: `{
+						"cityId": 2,
+						"cityName": "${city}",
+						"currentConditions": "Sun",
+						"temperature": 9,
+						"windSpeed": 17,
+						"windDirection": "South easterly",
+						"windChillFactor": 7
+					}`,
         },
       ],
     };
