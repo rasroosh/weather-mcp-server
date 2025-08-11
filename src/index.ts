@@ -37,25 +37,7 @@ const getWeatherForecastByCity = server.tool(
       content: [
         {
           type: "text",
-          text: `{
-			    "cityName": "${params.city}",
-			    "forecast": [
-			        {
-			            "conditions": "Sun",
-			            "temperature": 12,
-			            "windChillFactor": 11,
-			            "windDirection": "Easterly",
-			            "windSpeed": 8
-			        },
-			        {
-			            "conditions": "Cloud",
-			            "temperature": 19,
-			            "windChillFactor": 16,
-			            "windDirection": "Southerly",
-			            "windSpeed": 13
-			        }
-			    ]
-			}`,
+          text: `{ "cityName": "${params.city}", "forecast": [{ "conditions": "Sun", "temperature": 12, "windChillFactor": 11, "windDirection": "Easterly", "windSpeed": 8 }, { "conditions": "Cloud", "temperature": 19, "windChillFactor": 16, "windDirection": "Southerly", "windSpeed": 13 }]}`,
         },
       ],
     };
