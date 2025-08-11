@@ -19,7 +19,7 @@ const getCurrentWeatherByCity = server.tool(
       content: [
         {
           type: "text",
-          text: `{ "cityName": "${param.city}",
+          text: `{ "cityName": "${params.city}",
 		    "currentConditions": "Sun",
 	        "temperature": 9,
 		    "windSpeed": 17,
@@ -43,7 +43,7 @@ const getWeatherForecastByCity = server.tool(
         {
           type: "text",
           text: `{
-			    "cityName": "${param.city}",
+			    "cityName": "${params.city}",
 			    "forecast": [
 			        {
 			            "conditions": "Sun",
