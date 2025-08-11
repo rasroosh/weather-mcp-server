@@ -19,7 +19,7 @@ const getCurrentWeatherByCity = server.tool(
       content: [
         {
           type: "text",
-          text: `{ "cityName": "${params.city}", "currentConditions": "Sun", "temperature": 9, "windSpeed": 17, "windDirection": "South easterly", "windChillFactor": 7}`,
+          text: `{ "cityName": "${params.city}", "forecast": [{ "day": 1, "conditions": "Sun", "temperature": 12, "windChillFactor": 11, "windDirection": "Easterly", "windSpeed": 8 }, { "day": 2, "conditions": "Cloud", "temperature": 19, "windChillFactor": 16, "windDirection": "Southerly", "windSpeed": 13 }]}`,
         },
       ],
     };
