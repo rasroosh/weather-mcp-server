@@ -26,7 +26,6 @@ const getCurrentWeatherByCity = server.tool(
   }
 );
 
-/*
 const getWeatherForecastByCity = server.tool(
   "get-weather-forecast-by-city",
   "Get weather forecast information by city",
@@ -44,7 +43,6 @@ const getWeatherForecastByCity = server.tool(
     };
   }
 );
-*/
 
 const app = express();
 app.use(express.json());
